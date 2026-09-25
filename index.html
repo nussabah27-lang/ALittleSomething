@@ -1,0 +1,620 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knock Knock</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- DOOR -->
+    <section id="door" class="screen active">
+
+        <div class="emoji">🚪</div>
+
+        <div class="small-text">SOMEONE IS AT THE DOOR</div>
+
+        <h1>Knock Knock.</h1>
+
+        <p>
+            Hello?
+        </p>
+
+        <p>
+            It's me.
+            <br>
+            Please open the door.
+        </p>
+
+        <div class="choices">
+
+            <button onclick="showScreen('closed')">
+                🔒 Keep it closed
+            </button>
+
+            <button onclick="showScreen('open')">
+                🚪 Open the door
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CLOSED DOOR -->
+    <section id="closed" class="screen">
+
+        <div class="emoji">😐🚪</div>
+
+        <h2>Oh.</h2>
+
+        <p>
+            So we're doing this?
+        </p>
+
+        <p>
+            Fine.
+        </p>
+
+        <p>
+            I will now contact the
+            <strong>Emergency Friendship Locksmith™</strong>.
+        </p>
+
+        <p class="quiet">
+            Please remain where you are.
+            Your door is officially under investigation.
+        </p>
+
+        <button onclick="showScreen('open')">
+            Fine... I'll open it 😭
+        </button>
+
+    </section>
+
+
+    <!-- OPEN DOOR -->
+    <section id="open" class="screen">
+
+        <div class="emoji">🚪✨</div>
+
+        <h2>Finally.</h2>
+
+        <p>
+            Thank you for opening the door.
+        </p>
+
+        <p>
+            Now before I come in...
+        </p>
+
+        <h2>Hug or handshake?</h2>
+
+        <div class="choices">
+
+            <button onclick="showScreen('hug')">
+                🫂 Hug
+            </button>
+
+            <button onclick="showScreen('handshake')">
+                🤝 Handshake
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HUG -->
+    <section id="hug" class="screen">
+
+        <div class="emoji">🫂</div>
+
+        <h2>Accepted.</h2>
+
+        <p>
+            Come here.
+        </p>
+
+        <p>
+            *virtual hug delivered successfully*
+        </p>
+
+        <p>
+            Now...
+        </p>
+
+        <button onclick="showScreen('seat')">
+            Have a seat →
+        </button>
+
+    </section>
+
+
+    <!-- HANDSHAKE -->
+    <section id="handshake" class="screen">
+
+        <div class="emoji">🤝</div>
+
+        <h2>Very professional.</h2>
+
+        <p>
+            Fine. Handshake accepted.
+        </p>
+
+        <p>
+            Although I was expecting a hug.
+            But okay. I will survive.
+        </p>
+
+        <button onclick="showScreen('seat')">
+            Have a seat →
+        </button>
+
+    </section>
+
+
+    <!-- SEAT -->
+    <section id="seat" class="screen">
+
+        <div class="emoji">🪑</div>
+
+        <h2>Take a seat.</h2>
+
+        <p>
+            Get comfortable.
+        </p>
+
+        <p>
+            We have something important to discuss.
+        </p>
+
+        <p class="quiet">
+            Don't worry. There will be no PowerPoint presentation.
+        </p>
+
+        <button onclick="showScreen('annoyed')">
+            I'm sitting. What now?
+        </button>
+
+    </section>
+
+
+    <!-- ANNOYED QUESTION -->
+    <section id="annoyed" class="screen">
+
+        <div class="emoji">🧐</div>
+
+        <h2>Be honest.</h2>
+
+        <p>
+            Are you still annoyed with me?
+        </p>
+
+        <div class="choices">
+
+            <button onclick="showScreen('veryAnnoyed')">
+                😤 Yes, very
+            </button>
+
+            <button onclick="showScreen('littleAnnoyed')">
+                😑 A little
+            </button>
+
+            <button onclick="showScreen('confused')">
+                🤨 I don't know
+            </button>
+
+            <button onclick="showScreen('fine')">
+                🙂 I'm actually okay
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- VERY ANNOYED -->
+    <section id="veryAnnoyed" class="screen">
+
+        <div class="emoji">😤</div>
+
+        <h2>Okay. Message received.</h2>
+
+        <p>
+            I'm not going to argue with you.
+        </p>
+
+        <p>
+            You have every right to feel how you feel.
+        </p>
+
+        <p>
+            So I have prepared a highly advanced
+            friendship-repair program.
+        </p>
+
+        <button onclick="showScreen('repair')">
+            Start repair program →
+        </button>
+
+    </section>
+
+
+    <!-- LITTLE ANNOYED -->
+    <section id="littleAnnoyed" class="screen">
+
+        <div class="emoji">😑</div>
+
+        <h2>Hmm...</h2>
+
+        <p>
+            So the friendship is currently operating
+            at approximately 73% capacity.
+        </p>
+
+        <p>
+            We can fix that.
+        </p>
+
+        <button onclick="showScreen('repair')">
+            Attempt repair →
+        </button>
+
+    </section>
+
+
+    <!-- CONFUSED -->
+    <section id="confused" class="screen">
+
+        <div class="emoji">🤨</div>
+
+        <h2>Fair enough.</h2>
+
+        <p>
+            Apparently your brain is still processing
+            the situation.
+        </p>
+
+        <p>
+            Let's not make it more complicated.
+        </p>
+
+        <button onclick="showScreen('repair')">
+            Continue →
+        </button>
+
+    </section>
+
+
+    <!-- FINE -->
+    <section id="fine" class="screen">
+
+        <div class="emoji">😌</div>
+
+        <h2>Really?</h2>
+
+        <p>
+            Are you sure?
+        </p>
+
+        <p>
+            Because I have already prepared
+            an unnecessarily elaborate apology.
+        </p>
+
+        <button onclick="showScreen('repair')">
+            I prepared it anyway →
+        </button>
+
+    </section>
+
+
+    <!-- REPAIR -->
+    <section id="repair" class="screen">
+
+        <div class="emoji">🛠️</div>
+
+        <h2>Friendship Repair Program</h2>
+
+        <p>
+            Select your preferred method of emotional recovery.
+        </p>
+
+        <div class="choices">
+
+            <button onclick="showScreen('compliment')">
+                💌 Receive a compliment
+            </button>
+
+            <button onclick="showScreen('joke')">
+                😂 Attempt to make you laugh
+            </button>
+
+            <button onclick="showScreen('apology')">
+                🥺 Hear the actual apology
+            </button>
+
+            <button onclick="showScreen('all')">
+                ✨ Activate everything
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPLIMENT -->
+    <section id="compliment" class="screen">
+
+        <div class="emoji">💌</div>
+
+        <h2>Compliment loading...</h2>
+
+        <p>
+            You are genuinely important to me.
+        </p>
+
+        <p>
+            And no, I don't consider you
+            just like everyone else.
+        </p>
+
+        <p>
+            If I did, I probably wouldn't have made
+            this ridiculous website for you.
+        </p>
+
+        <button onclick="showScreen('apology')">
+            Continue →
+        </button>
+
+    </section>
+
+
+    <!-- JOKE -->
+    <section id="joke" class="screen">
+
+        <div class="emoji">😂</div>
+
+        <h2>Attempting comedy...</h2>
+
+        <p>
+            Why did I make an entire website
+            instead of just saying sorry?
+        </p>
+
+        <p>
+            Because apparently I have too much free time.
+        </p>
+
+        <p class="quiet">
+            Comedy department has been fired.
+        </p>
+
+        <button onclick="showScreen('apology')">
+            Okay, give me the real apology →
+        </button>
+
+    </section>
+
+
+    <!-- APOLOGY -->
+    <section id="apology" class="screen">
+
+        <div class="heart">♡</div>
+
+        <h2>Okay. No jokes now.</h2>
+
+        <p>
+            I know I've apologized to you before.
+        </p>
+
+        <p>
+            And every time, you told me it was okay.
+        </p>
+
+        <p>
+            But I know that just because you said
+            "it's okay" doesn't mean you weren't hurt.
+        </p>
+
+        <p>
+            What happened might not have been a huge matter,
+            but I understand that you didn't expect it from me.
+        </p>
+
+        <p>
+            And I'm sorry for that.
+        </p>
+
+        <p>
+            I never wanted you to feel like
+            I see you as just another person.
+        </p>
+
+        <p>
+            Because you're not.
+        </p>
+
+        <p class="ending">
+            I just want you to know that.
+        </p>
+
+        <button onclick="showScreen('allGood')">
+            Continue →
+        </button>
+
+    </section>
+
+
+    <!-- ALL GOOD -->
+    <section id="all" class="screen">
+
+        <div class="emoji">✨</div>
+
+        <h2>Maximum repair activated.</h2>
+
+        <p>
+            Compliment? ✓
+        </p>
+
+        <p>
+            Terrible joke? ✓
+        </p>
+
+        <p>
+            Sincere apology? ✓
+        </p>
+
+        <p>
+            Unnecessary website? VERY ✓
+        </p>
+
+        <button onclick="showScreen('allGood')">
+            Final check →
+        </button>
+
+    </section>
+
+
+    <!-- FINAL CHECK -->
+    <section id="allGood" class="screen">
+
+        <div class="emoji">🔎</div>
+
+        <h2>Final Friendship Check</h2>
+
+        <p>
+            After all that...
+        </p>
+
+        <p>
+            Is your mood at least a little better now?
+        </p>
+
+        <div class="choices">
+
+            <button onclick="showScreen('better')">
+                🙂 Yes, better
+            </button>
+
+            <button onclick="showScreen('notBetter')">
+                😐 Nope
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- BETTER -->
+    <section id="better" class="screen">
+
+        <div class="emoji">🎉</div>
+
+        <h2>SUCCESS!</h2>
+
+        <p>
+            Friendship Repair System reports:
+        </p>
+
+        <p>
+            <strong>MOOD IMPROVEMENT DETECTED.</strong>
+        </p>
+
+        <p>
+            Now forget this entire dramatic website
+            and come talk to me normally.
+        </p>
+
+        <button onclick="showScreen('final')">
+            Okay 🤍
+        </button>
+
+    </section>
+
+
+    <!-- NOT BETTER -->
+    <section id="notBetter" class="screen">
+
+        <div class="emoji">❌</div>
+
+        <h2>Invalid option.</h2>
+
+        <p>
+            That answer is not supported by this website.
+        </p>
+
+        <p>
+            Please try again.
+        </p>
+
+        <button onclick="showScreen('allGood')">
+            Try again →
+        </button>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section id="final" class="screen">
+
+        <div class="heart">♡</div>
+
+        <h2>Okay. That's it.</h2>
+
+        <p>
+            I don't have another speech prepared.
+        </p>
+
+        <p>
+            I don't want to keep apologizing
+            until the word "sorry" loses its meaning.
+        </p>
+
+        <p>
+            I just want us to talk.
+        </p>
+
+        <p>
+            Normally.
+        </p>
+
+        <p>
+            Like before.
+        </p>
+
+        <p class="ending">
+            Now come talk to me. 🤍
+        </p>
+
+        <img
+            src="images/cute.png"
+            alt="A little something"
+            class="final-image"
+        >
+
+        <p class="small-text">
+            Friendship Repair System — session complete.
+        </p>
+
+    </section>
+
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
+
